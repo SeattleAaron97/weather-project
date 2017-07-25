@@ -13,7 +13,7 @@ function apiTranslator(zipInt){
     console.log("zip code = " + zip);
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?zip='
+    request.open('GET', 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?zip='
              + zipInt + '&APPID=fee07ba88ad9a84b43079c48a01b2564', true);
 
 

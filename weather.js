@@ -13,24 +13,28 @@ function apiTranslator(zipInt){
     console.log("zip code = " + zip);
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?zip='
-             + zipInt + '&APPID=fee07ba88ad9a84b43079c48a01b2564', true);
+    request.open('GET', 'https://api.apixu.com/v1/current.json?key=1623b795a6ef4d499c852228172807&q='
+             + zipInt, true);
 
 
     request.onload = function(){
         if(request.status >= 200 && request.status <=400)   {
 
             var rawData = request.responseText;
+            
             var JSONdata = JSON.parse(rawData);
-            var currentTempInKelvin = JSONdata.main.temp;
-            var currentTempInFahrenheit = (currentTempInKelvin * 9 / 5) - 459.67;
-            var currentWeatherDescription = JSONdata.weather[0].description;
-            var currentWeatherIcon = JSONdata.weather[0].icon;
-            var iconImage = currentWeatherIcon + ".png";
+            console.log(JSONdata);
+            //debugger;
+            var currentTemp = JSONdata.current.temp_f;
+            console.log(currentTemp);
+           
+            var currentWindDir = JSONdata.current.wind_dir;
+            //var currentWeatherIcon = JSONdata.weather[0].icon;
+            //var iconImage = currentWeatherIcon + ".png";
 
-            document.getElementById("tempOutputter").innerHTML = "current temperature in fahrenheit  =  " + currentTempInFahrenheit;
+            document.getElementById("tempOutputter").innerHTML = "current temperature in fahrenheit  =  " + currentTemp;
              
-            document.getElementById("weatherOutputter").innerHTML = "current weather type = " + currentWeatherDescription + "!!!" + iconImage;
+            document.getElementById("weatherOutputter").innerHTML = "current wind direction = " + currentWindDir + "!!!";// + iconImage;
             
             
         }
@@ -46,3 +50,4 @@ function apiTranslator(zipInt){
 
 
 }
+

@@ -3,8 +3,12 @@ h1{
     font-family: Palatino Linotype;
 
     text-align: center;
-
 }
+h3{
+    text-align: center;
+}
+
+
 
 border{
     color: rebeccapurple;

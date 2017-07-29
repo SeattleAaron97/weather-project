@@ -1,10 +1,15 @@
 
+
 function action(){
     zip = document.getElementById("zipCode").value;
-    
-
-
     apiTranslator(zip);
+}
+
+function myKeyUp(e) {
+    console.log(e.keyCode);
+    if(e.keyCode == 13){
+        action();
+    }
 }
 
 // !!! WEATHERMAP.ORG API KEY !!! --->     fee07ba88ad9a84b43079c48a01b2564   !!! //
@@ -50,4 +55,3 @@ function apiTranslator(zipInt){
 
 
 }
-

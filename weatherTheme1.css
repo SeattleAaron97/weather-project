@@ -8,10 +8,9 @@ h3{
     text-align: center;
 }
 
-
-
 border{
     color: rebeccapurple;
-
-
+}
+ body{
+    background-color: pink;    
 }

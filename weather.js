@@ -1,5 +1,3 @@
-
-
 function action(){
     zip = document.getElementById("zipCode").value;
     apiTranslator(zip);
